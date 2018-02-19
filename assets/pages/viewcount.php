@@ -30,7 +30,6 @@ if(isset($_POST['guess'])) {
 			
 			$_SESSION['points']++;
 		} else {
-			echo "wrong guess";
 			echo("<script>location.href = '?page=gameover&game=viewcount';</script>");
 			exit();
 		}
@@ -47,7 +46,6 @@ if(isset($_POST['guess'])) {
 			$_SESSION['points']++;
 
 		} else {
-			echo "wrong guess";
 			echo("<script>location.href = '?page=gameover&game=viewcount';</script>");
 			exit();
 		}

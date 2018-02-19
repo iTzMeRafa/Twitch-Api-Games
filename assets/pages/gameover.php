@@ -5,9 +5,13 @@ if(!isset($_SESSION['points'])) {
 	exit();
 }
 require_once('assets/classes/class.TwitchUserAPI.php');
+require_once('assets/classes/class.Tools.php');
+require_once('assets/classes/class.Scores.php');
 
 $twitchUserAPI 	= new TwitchUserAPI();
 $userData 		= $twitchUserAPI->initialiseAPI();
+
+Scores::addScoreViewcount($_SESSION['points']);
 
 ?>
 <div class="header"> 
@@ -24,7 +28,21 @@ $userData 		= $twitchUserAPI->initialiseAPI();
     	<div class="bold">Of all players, you are in the top:</div>
       	<div class='big'>XYZ %</div>
       	<br>
-      	<p style="font-size: 20px;"> The average score is: xyz points. </p>
+      	<p style="font-size: 20px;"> The average score is: <?= Scores::getAvgScoreViewcount(); ?> </p>
+        <hr>
+         <p> The correct answer was: </p>
+        <div class="col-md-6"> 
+          <p style="font-size: 20px;"> 
+            <?= $_SESSION['streamer1']['display_name']; ?> <br />
+            Views: <?= Tools::numberFormat($_SESSION['streamer1']['view_count']); ?>
+          </p>
+        </div>
+        <div class="col-md-6"> 
+          <p style="font-size: 20px;"> 
+            <?= $_SESSION['streamer2']['display_name']; ?> <br />
+            Views: <?= Tools::numberFormat($_SESSION['streamer2']['view_count']); ?>
+          </p>
+        </div>
      
     </div>
   </div>
@@ -51,6 +69,6 @@ $userData 		= $twitchUserAPI->initialiseAPI();
 
 <?php
 
-session_destroy();
+//session_destroy();
 
 ?>

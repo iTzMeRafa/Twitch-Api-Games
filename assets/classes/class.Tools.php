@@ -2,9 +2,9 @@
 
 class Tools {
 	
-	public static function sinnfrei() {
+	public static function numberFormat($number) {
 		
-			return;
+			return number_format($number , 0, ',', '.');
 	}
 
 }

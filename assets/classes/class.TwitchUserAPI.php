@@ -37,22 +37,6 @@ class TwitchUserAPI {
 
 	}
 
-	public function checkGuess($guess) {
-		$text = "hallo";
-		return $text;
-		/*$streamer1 	= $_SESSION['streamer1'];
-		$streamer2 	= $_SESSION['streamer1'];
-		$guess 		= $guess;
-		return var_dump($streamer1, $streamer2, $guess).exit;
-
-		if($streamer1['view_count'] > $streamer2['view_count']) {
-
-		}*/
-
-	}
-
-
-
 }
 
 ?>

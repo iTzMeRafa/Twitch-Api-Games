@@ -22,6 +22,23 @@ class Scores {
 	    
 	}
 
+	public static function getPercentageOfAllPlayers($score) {
+		$scoreList = array();
+		$file = fopen("assets/scores/scores_Viewcount.txt", "r");
+		while(! feof($file)) {
+			$result = (int)fgets($file);
+			array_push($scoreList, $result);
+		}
+		asort($scoreList);
+		$countScores = count($scoreList);
+		$valuePos = array_search($score, $scoreList);
+
+		$countPeopleBetter = $countScores - $valuePos;
+		$percentage = ($countPeopleBetter/$countScores)*100;
+		return round($percentage, 2);
+		
+	}
+
 }
 
 ?>

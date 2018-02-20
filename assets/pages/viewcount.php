@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 
 require_once('assets/classes/class.TwitchUserAPI.php');
+require_once('assets/classes/class.Tools.php');
 
 $twitchUserAPI 	= new TwitchUserAPI();
 $userData 		= $twitchUserAPI->initialiseAPI();
@@ -58,7 +59,7 @@ if(isset($_POST['guess'])) {
 	<div class="row">
 		<div class="col-md-12">
 			<p class="logo"><img src="assets/img/twitch_logo.png" style="width: 150px; height: auto;"> API GAMES</p>
-			<p class="score">Score: <?= $_SESSION['points']; ?></p>
+			<p class="score">Score: <?= Tools::numberFormat($_SESSION['points']); ?></p>
 		</div>
 	</div>
 </div>
@@ -66,7 +67,7 @@ if(isset($_POST['guess'])) {
   <div>
     <img src="<?= $_SESSION['streamer1']['profile_image_url']; ?>">
     <div class='text-content'>
-    	<div class="bold"><?= $_SESSION['streamer1']['view_count']; ?> views</div>
+    	<div class="bold"><?= Tools::numberFormat($_SESSION['streamer1']['view_count']); ?> views</div>
       	<div class='big'><?= $_SESSION['streamer1']['display_name']; ?></div>
       	<br />
      

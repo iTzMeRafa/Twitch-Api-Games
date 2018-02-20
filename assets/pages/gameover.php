@@ -12,6 +12,7 @@ $twitchUserAPI 	= new TwitchUserAPI();
 $userData 		= $twitchUserAPI->initialiseAPI();
 
 Scores::addScoreViewcount($_SESSION['points']);
+$percentage = Scores::getPercentageOfAllPlayers($_SESSION['points']);
 
 ?>
 <div class="header"> 
@@ -26,7 +27,7 @@ Scores::addScoreViewcount($_SESSION['points']);
     <div class='text-content'>
     	<br>
     	<div class="bold">Of all players, you are in the top:</div>
-      	<div class='big'>XYZ %</div>
+      	<div class='big'><?= $percentage; ?> %</div>
       	<br>
       	<p style="font-size: 20px;"> The average score is: <?= Scores::getAvgScoreViewcount(); ?> </p>
         <hr>
@@ -63,7 +64,7 @@ Scores::addScoreViewcount($_SESSION['points']);
 </div>
 <div id='split-pane-or'>
   <div>
-    <img src='assets/img/vs-icon_transparent.png'>
+    <!--<img src='assets/img/vs-icon_transparent.png'>-->
   </div>
 </div>
 

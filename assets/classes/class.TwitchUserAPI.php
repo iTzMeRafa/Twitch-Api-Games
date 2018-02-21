@@ -1,10 +1,7 @@
 <?php 
-require_once('class.Tools.php');
-require_once('class.Config.php');
+
 
 class TwitchUserAPI {
-
-	public $points 			= 0;
 
 	public function initialiseAPI() {
 

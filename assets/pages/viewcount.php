@@ -1,8 +1,4 @@
 <?php
-error_reporting(E_ALL);
-
-require_once('assets/classes/class.TwitchUserAPI.php');
-require_once('assets/classes/class.Tools.php');
 
 $twitchUserAPI 	= new TwitchUserAPI();
 $userData 		= $twitchUserAPI->initialiseAPI();
@@ -65,7 +61,7 @@ if(isset($_POST['guess'])) {
 </div>
 <div class='split-pane col-xs-12 col-sm-6 uiux-side'>
   <div>
-    <img src="<?= $_SESSION['streamer1']['profile_image_url']; ?>">
+    <img src="<?= $_SESSION['streamer1']['profile_image_url']; ?>" style="height: 1.3em;">
     <div class='text-content'>
     	<div class="bold"><?= Tools::numberFormat($_SESSION['streamer1']['view_count']); ?> views</div>
       	<div class='big'><?= $_SESSION['streamer1']['display_name']; ?></div>
@@ -76,7 +72,7 @@ if(isset($_POST['guess'])) {
 </div>
 <div class='split-pane col-xs-12 col-sm-6 frontend-side'>
   <div>
-    <img src="<?= $_SESSION['streamer2']['profile_image_url']; ?>">
+    <img src="<?= $_SESSION['streamer2']['profile_image_url']; ?>" style="height: 1.3em;">
     <div class='text-content'>
       <div class="bold"><div class="glitch"></div> </div>
       <div class='big'><?= $_SESSION['streamer2']['display_name']; ?></div>

@@ -29,6 +29,7 @@ class Scores {
 			$result = (int)fgets($file);
 			array_push($scoreList, $result);
 		}
+		fclose($file);
 		asort($scoreList);
 		$countScores = count($scoreList);
 		$valuePos = array_search($score, $scoreList);

@@ -10,6 +10,9 @@ html, body {
   min-height: 18em;
 }
 
+input[type="text"] {
+  color: black !important;
+}
 .frontend-side {
   background-image: url("");
   background-color: #6441a4;
@@ -54,13 +57,7 @@ html, body {
 .split-pane > div .text-content .big {
   font-size: 2em;
 }
-.split-pane > div img {
-  height: 1.3em;
-}
 @media (max-width: 500px) {
-  .split-pane > div img {
-    display:none;
-  }
 }
 .split-pane button, .split-pane a.button {
   font-family: 'Open Sans', sans-serif;
@@ -111,17 +108,18 @@ html, body {
   #split-pane-or {
     top:15%;
   }
-}
-#split-pane-or > div img {
-  height: 2.5em;
+
+  .logo {
+    display: none;
+  }
+  .score {
+    font-size: 16px;
+  }
+
 }
 @media (max-width: 500px) {
   #split-pane-or {
-    position: absolute;
-    top: 50px;
-  }
-  #split-pane-or > div img {
-    height:2em;
+    display: none;
   }
 }
 @media(min-width: 500px) {

@@ -70,6 +70,6 @@ $percentage = Scores::getPercentageOfAllPlayers($_SESSION['points']);
 
 <?php
 
-//session_destroy();
+session_destroy();
 
 ?>

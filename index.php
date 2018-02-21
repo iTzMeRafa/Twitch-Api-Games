@@ -1,6 +1,10 @@
 <?php 
 	session_start();
-	include_once('assets/classes/class.Config.php');
+	require_once('assets/classes/class.Config.php');
+    require_once('assets/classes/class.Scores.php');
+    require_once('assets/classes/class.Tools.php');
+    require_once('assets/classes/class.TwitchUserAPI.php');
+    require_once('assets/classes/class.TwitchSubscriberAPI.php');
 ?>
 
 <!DOCTYPE html>

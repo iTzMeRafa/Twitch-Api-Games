@@ -1,7 +1,5 @@
 <?php
 
-require_once('assets/classes/class.TwitchUserAPI.php');
-
 $twitchUserAPI 	= new TwitchUserAPI();
 $userData 		  = $twitchUserAPI->initialiseAPI();
 $countUsers     = count($userData);
